@@ -1,0 +1,359 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address,big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul,li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption,footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}article, aside, details, figcaption, figure,footer,header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul{list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: "";content: none;}table {border-collapse: collapse;border-spacing: 0;}
+
+body {
+    background: url(bg.jpg) top left no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+header {
+    padding: 2vh 2vw;
+    display: flex;
+    background: #333;
+    box-shadow: 2px 2px 2px #333;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.2em;
+    margin-right: 3vw;
+    margin-top: 1vh;
+    color: #f1f1f1;
+}
+
+.search {
+    width: 90%;
+}
+
+.spacer {
+    background: #aaa;
+    height: 3vh;
+}
+
+.container {
+    font-family: 'Concert One', cursive;
+    border-radius: 5px;
+    margin: 0vh 2vw;
+    display: flex;
+}
+
+.player {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.player audio {
+    display: block;
+    width: 100%;
+}
+
+#now-playing {
+    padding: 2vh 2vw;
+    font-size: 1.5em;
+    color: #fff;
+    background: #333;
+    display: block;
+    width: 100%;
+    opacity: 0.7;
+    
+}
+
+.search-form {
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+    
+}
+
+.search-form #searchbar,
+#searchbar:focus{
+    padding: 7px 2%;
+    border: none;
+    border-right: 1px solid #aaa;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 90%;
+    outline: none;
+    
+}
+
+.search-form #submit {
+    background: #333;
+    color: #FFF;
+    padding: 7px 2%;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 10%;
+}
+
+#submit:hover {
+    background: #666;
+    transition-duration: 0.5s;
+}
+
+.results-heading {
+    padding: 1.5vh 2vw;
+    text-align: center;
+    background: #aaa;
+    color: #000;
+    font-size: 1.5em;
+    margin: 0 30vw;
+    margin-bottom: -5vh;
+    padding-top: 0;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 1px solid #222;
+    border-top: none;
+    box-shadow: 2px 2px 2px #333;
+}
+
+.results {
+    margin: 0vh 1vw;
+    margin-bottom: 2vh;
+    width: 100%;
+    height: 80%;
+    width: 100%;
+}
+
+.results ul {
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+p {
+    padding: 2vh 0;
+    color: #FFF;
+}
+a {
+    color: dodgerblue;
+}
+
+i {
+    margin-right: 0.3em;
+}
+
+.tab-select {
+    padding: 0 2vw;
+    padding-top: 2vh;
+    background: #f1f1f1;
+    text-align: left;
+}
+
+.tab-select button {
+    border: none;
+    background: #AAA;
+    color: #fff;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 1% 5%;
+    font-size: 0.8em;
+    display: inline;
+}
+
+.tab-select button:focus {
+    outline: none;
+}
+
+
+.tab-select button:hover {
+    background: #555;
+    transition-duration: 0.5s;
+}
+
+.tab-select .selected {
+    background: #333;
+}
+
+.tab-select span {
+    font-size: 1.2em;
+}
+
+/* ---- User Results Styles -------- */
+.user-results,
+.track-results {
+    /*   visibility: hidden;*/
+    margin: 0 2vw;
+    padding-top: 2vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 3px solid #222;
+    border-top: none;
+    background: rgba(34, 34, 34, 0.7);
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height: 70vh;
+}
+
+.user-results {
+    
+}
+
+.user-results ul {
+    display: flex;
+/*    grid-template-columns: repeat(4, 1fr);*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 98%;
+    margin-top: -2vh;
+}
+
+.user-results ul li {
+    width:30%;
+    height: 22%;
+    list-style-type: none;
+    margin: 1vh 0.5vw;
+    text-align: center;
+    padding: 1%;
+    flex-grow: 0;
+}
+.user-name {
+    width: 100%;
+    padding-bottom: 2vh;
+    padding-top: 5px;
+    text-align: left;
+    line-height: 1.5em;
+    display: flex;
+    background: #555;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    
+}
+
+.trackct, .followerct {
+    display: inline;
+    font-size: 0.7em;
+}
+
+.trackct {
+    margin-right: 0.1em;
+}
+.user-name a {
+    color:dodgerblue;
+    font-size: 0.7em;
+    word-wrap: break-word;
+}
+
+.avatar {
+    width: 30%;
+    margin-right: 1%;
+    margin-left: 5%;
+}
+
+.avatar img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #f1f1f1;
+    margin-top: 10%;
+}
+.beside-avatar {
+    margin-top: 1%;
+    width: 90%;
+}
+
+.beside-avatar span {
+    display: block;
+}
+
+.uname {
+    font-size: 1.1em;
+}
+
+.name {
+    word-wrap: break-word;
+}
+
+.beside-avatar span {
+    color: #FFF;
+}
+.user-bottom {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    padding: 2vh 0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 2px 2px #333;
+}
+
+.desc {
+    display: block;
+    margin-bottom: 0.3em;
+    margin-left: 0.3em;
+}
+
+
+/* ---- Track Results Styles ------- */
+.track-results {
+    visibility: hidden;
+    position: absolute;
+    margin-top: -72.5vh;
+}
+
+.track-results ul {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 95vw;
+}
+
+.track-results ul li {
+    display: flex;
+    background: #333;
+    padding: 1% 0;
+    margin-bottom: 1vh;
+}
+
+/*.track-results ul li:hover .clicktoplay {
+    display: block;
+}
+
+.track-results ul li:hover .beside-trackimg span {
+    opacity: 0.2;
+}*/
+
+
+.track-results ul li .trackimg {
+    width: 15%;
+}
+
+.trackimg img {
+    border-radius: 50%;
+    border: 1px solid #f1f1f1;
+    max-width: 90%;
+    height: auto;
+}
+
+.track-results ul li .beside-trackimg {
+    width: 85%;
+    text-align: left;
+}
+
+.beside-trackimg span {
+    display: inline;
+    margin-right: 3%;
+    color: #FFF;
+}
+
+.beside-trackimg .name {
+    display: block;
+    margin-top: 2%;
+}
+
+.beside-trackimg .track-bottom {
+    margin-top: 2%;
+}
+
+.beside-trackimg .clicktoplay {
+    display: none;
+    margin-top: -7%;
+    margin-bottom: 7%;
+    margin-left: 40%;
+    font-size: 1.2em;
+    text-shadow: 1px 1px #000;
+    transition-duration: 0.5s;
+}

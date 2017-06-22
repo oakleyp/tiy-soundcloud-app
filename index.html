@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SoundCloud Music Search</title>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Kavoon" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>TitleHere</h1>
+        <section class="search">
+            <div class="search-form">
+                <input id="searchbar" name="searchbar" type="text" placeholder="Search here...">
+                <button id="submit" name="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </section>
+    </header>
+    <section class="player">
+        <span id="now-playing"></span>
+        <audio class="music-player" controls="controls" src=""></audio>
+    </section>
+    <section class="tab-select">
+        <button id="user-results-btn" class="selected">Users</button>
+        <button id="track-results-btn">Tracks</button>
+    </section>
+    <section class="user-results">
+        <p id="default-status">There aren't any results to display yet. Use the search bar above to get started.</p>
+        <ul>
+        </ul>
+        <p id="user-results-status"></p>
+    </section>
+    <section class="track-results">
+        <ul>
+        </ul>
+        <p id="track-results-status"></p>
+    </section>
+
+    <p id="track-results-status"></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
