@@ -60,6 +60,7 @@ function startVisualizer() {
     analyzer.fftSize = 2048;
     
     audiosrc.connect(analyzer);
+    analyzer.connect(ctx.destination);
     
     bufferLength = analyzer.fftSize;
 
